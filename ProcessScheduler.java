@@ -1,17 +1,35 @@
 // driver
-import java.io.File; 
+import java.io.File;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Scanner; 
 
 class ProcessScheduler {
     public static void main(String[] args) throws Exception {
-        Process p1 = new Process(1, 500, 1);
+        List<Process> processes = getProcessesFromFile(args[0]);
 
-        System.out.println(p1.toString());
+        for (Process process : processes) {
+            System.out.println(process);
+        }
+    }
 
-        File file = new File(args[0]); 
+    private static List<Process> getProcessesFromFile(String filePath) throws Exception {
+        File file = new File(filePath); 
         Scanner sc = new Scanner(file); 
     
-        while (sc.hasNextLine()) 
-            System.out.println(sc.nextLine()); 
+        List<Process> processList = new LinkedList<Process>();
+
+        while (sc.hasNextLine()) {
+            Process process = new Process();
+            process.PID = Integer.parseInt(sc.nextLine());
+            process.burstTime = Integer.parseInt(sc.nextLine());
+            process.priority = Integer.parseInt(sc.nextLine());
+
+            processList.add(process);
+        }
+
+        sc.close();
+
+        return processList;
     }
 }
