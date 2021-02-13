@@ -23,7 +23,7 @@ public class CSVFile {
     public String toString() {
         String toReturn = "";
 
-        toReturn += "Proc Time,PID,Start Burst,End Burst, Complete\nAd";
+        toReturn += "Proc Time,PID,Start Burst,End Burst, Complete\n";
 
         for (CSVRow row : rows) {
             toReturn += row.toString() + "\n";
