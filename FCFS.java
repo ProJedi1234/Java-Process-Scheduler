@@ -9,8 +9,8 @@ public class FCFS extends Scheduler {
     public void runScheduler() {
         int timePassed = 0;
         for (Process process : processList) {
-            csvFile.rows.add(new CSVRow(timePassed, process.PID, process.burstTime, 0, process.burstTime));
-            timePassed += process.burstTime;
+            csvFile.rows.add(new CSVRow(timePassed, process.PID, process.burstTime, 0, timePassed + process.burstTime));
+            timePassed += process.burstTime + 2;
         }
 
         System.out.println(csvFile);
