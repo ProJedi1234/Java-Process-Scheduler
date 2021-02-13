@@ -15,7 +15,7 @@ public class RoundRobin extends Scheduler {
 
         ArrayList<Process> processesList = new ArrayList<>();
         for (Process process : this.processList) {
-            processesList.add(process);
+            processesList.add(new Process(process.PID, process.burstTime, process.priority));
         }
 
         while (getTotalBurst(processesList) > 0) {
