@@ -18,7 +18,7 @@ public class RoundRobin extends Scheduler {
             processesList.add(process);
         }
 
-        while (getTotalBurst() > 0) {
+        while (getTotalBurst(processesList) > 0) {
             for (Process process : processesList) {
                 if (process.burstTime > quantum) {
                     csvFile.rows.add(new CSVRow(timePassed, process.PID, process.burstTime, 0, 0));
@@ -38,9 +38,9 @@ public class RoundRobin extends Scheduler {
         csvFile.saveFile("RB-" + quantum + "-testfile.csv");
     }
 
-    private int getTotalBurst() {
+    private int getTotalBurst(ArrayList<Process> list) {
         int total = 0;
-        for (Process process : processList) {
+        for (Process process : list) {
             total += process.burstTime;
         }
 

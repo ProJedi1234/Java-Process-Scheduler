@@ -19,6 +19,10 @@ class ProcessScheduler {
         RoundRobin rb = new RoundRobin(processes, 20);
         rb.runScheduler();
         rb.saveCSVData();
+
+        RoundRobin rb2 = new RoundRobin(processes, 40);
+        rb2.runScheduler();
+        rb2.saveCSVData();
     }
 
     private static List<Process> getProcessesFromFile(String filePath) throws Exception {
