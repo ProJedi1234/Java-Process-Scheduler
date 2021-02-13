@@ -14,8 +14,11 @@ class ProcessScheduler {
 
         SJF sjf = new SJF(processes);
         sjf.runScheduler();
-        System.out.println(sjf.csvFile);
         sjf.saveCSVData();
+
+        RoundRobin rb = new RoundRobin(processes, 20);
+        rb.runScheduler();
+        rb.saveCSVData();
     }
 
     private static List<Process> getProcessesFromFile(String filePath) throws Exception {
