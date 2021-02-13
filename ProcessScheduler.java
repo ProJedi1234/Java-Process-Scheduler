@@ -9,10 +9,6 @@ class ProcessScheduler {
     public static void main(String[] args) throws Exception {
         List<Process> processes = getProcessesFromFile(args[0]);
 
-        for (Process process : processes) {
-            System.out.println(process);
-        }
-
         FCFS fcfs = new FCFS(processes);
         fcfs.runScheduler();
         fcfs.saveCSVData();
