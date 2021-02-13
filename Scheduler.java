@@ -9,4 +9,5 @@ public abstract class Scheduler {
         this.processList = processList;
     }
     public abstract void runScheduler();
+    public abstract void saveCSVData() throws Exception;
 }

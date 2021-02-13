@@ -15,6 +15,7 @@ class ProcessScheduler {
 
         FCFS fcfs = new FCFS(processes);
         fcfs.runScheduler();
+        fcfs.saveCSVData();
     }
 
     private static List<Process> getProcessesFromFile(String filePath) throws Exception {

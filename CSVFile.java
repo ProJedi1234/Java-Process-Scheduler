@@ -1,3 +1,4 @@
+import java.io.FileWriter;
 import java.util.ArrayList;
 
 public class CSVFile {
@@ -8,6 +9,14 @@ public class CSVFile {
     }
     public CSVFile(ArrayList<CSVRow> rows) {
         this.rows = rows;
+    }
+
+    public void saveFile(String fileName) throws Exception {
+        try(FileWriter myWriter = new FileWriter(fileName)) {
+            myWriter.write("Files in Java might be tricky, but it is fun enough!");
+        } catch (Exception e) {
+            System.out.println("An error occurred while saving your file");
+        }
     }
 
     @Override
