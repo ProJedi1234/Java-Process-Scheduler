@@ -14,7 +14,7 @@ public class CSVRow {
         EndBurst = 0;
         Complete = 0;
     }
-    public CSVRow(int procssedTime, int PID, int StartBurst, int EndBurst, int Complete) {
+    public CSVRow(int processedTime, int PID, int StartBurst, int EndBurst, int Complete) {
         this.processedTime = processedTime;
         this.PID = PID;
         this.StartBurst = StartBurst;
