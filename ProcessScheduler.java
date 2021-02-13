@@ -1,8 +1,9 @@
 // driver
 import java.io.File;
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Scanner; 
+import java.util.Scanner;
 
 class ProcessScheduler {
     public static void main(String[] args) throws Exception {
@@ -11,6 +12,9 @@ class ProcessScheduler {
         for (Process process : processes) {
             System.out.println(process);
         }
+
+        FCFS fcfs = new FCFS(processes);
+        fcfs.runScheduler();
     }
 
     private static List<Process> getProcessesFromFile(String filePath) throws Exception {
