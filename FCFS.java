@@ -12,8 +12,6 @@ public class FCFS extends Scheduler {
             csvFile.rows.add(new CSVRow(timePassed, process.PID, process.burstTime, 0, timePassed + process.burstTime));
             timePassed += process.burstTime + 2;
         }
-
-        System.out.println(csvFile);
     }
 
     @Override
