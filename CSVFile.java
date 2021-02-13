@@ -19,6 +19,15 @@ public class CSVFile {
         }
     }
 
+    public Float getAverageCompletionTime() {
+        Float total = 0f;
+        for (CSVRow row : rows) {
+            total += row.Complete;
+        }
+
+        return total/rows.size();
+    }
+
     @Override
     public String toString() {
         String toReturn = "";
@@ -28,6 +37,8 @@ public class CSVFile {
         for (CSVRow row : rows) {
             toReturn += row.toString() + "\n";
         }
+
+        toReturn += "Average,,,," + getAverageCompletionTime();
 
         return toReturn;
     }
