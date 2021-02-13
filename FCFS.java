@@ -16,6 +16,6 @@ public class FCFS extends Scheduler {
 
     @Override
     public void saveCSVData() throws Exception {
-        csvFile.saveFile("FSCS-testfile.csv");
+        csvFile.saveFile("FCFS-testfile.csv");
     }
 }
