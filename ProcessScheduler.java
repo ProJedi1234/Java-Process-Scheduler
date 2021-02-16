@@ -27,6 +27,8 @@ class ProcessScheduler {
         Lottery lottery = new Lottery(processes, 50);
         lottery.runScheduler();
         lottery.saveCSVData();
+
+        getAverageLottery(processes, 1000);
     }
 
     private static List<Process> getProcessesFromFile(String filePath) throws Exception {
@@ -47,5 +49,16 @@ class ProcessScheduler {
         sc.close();
 
         return processList;
+    }
+
+    private static void getAverageLottery(List<Process> processes, int numberOfTimes) {
+        float total = 0;
+        for (int i = 0; i < numberOfTimes; i++) {
+            Lottery lotto = new Lottery(processes, 50);
+            lotto.runScheduler();
+            total += lotto.csvFile.getAverageCompletionTime();
+        }
+
+        System.out.println("Average for lottery: " + total/numberOfTimes);
     }
 }
