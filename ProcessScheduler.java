@@ -29,6 +29,14 @@ class ProcessScheduler {
         lottery.saveCSVData();
 
         getAverageLottery(processes, 1000);
+
+        //Print summary
+        System.out.printf("FCFS:\t\t%.4f%n", fcfs.csvFile.getAverageCompletionTime());
+        System.out.printf("SJF:\t\t%.4f%n", sjf.csvFile.getAverageCompletionTime());
+        System.out.printf("RR 20:\t\t%.4f%n", rb.csvFile.getAverageCompletionTime());
+        System.out.printf("RR 40:\t\t%.4f%n", rb2.csvFile.getAverageCompletionTime());
+        System.out.printf("Lottery Avg:\t%.4f%n", getAverageLottery(processes, 1000));
+        getAverageLottery(processes, 1000);
     }
 
     private static List<Process> getProcessesFromFile(String filePath) throws Exception {
@@ -51,7 +59,7 @@ class ProcessScheduler {
         return processList;
     }
 
-    private static void getAverageLottery(List<Process> processes, int numberOfTimes) {
+    private static float getAverageLottery(List<Process> processes, int numberOfTimes) {
         float total = 0;
         for (int i = 0; i < numberOfTimes; i++) {
             Lottery lotto = new Lottery(processes, 50);
@@ -59,6 +67,6 @@ class ProcessScheduler {
             total += lotto.csvFile.getAverageCompletionTime();
         }
 
-        System.out.println("Average for lottery: " + total/numberOfTimes);
+        return total/numberOfTimes;
     }
 }

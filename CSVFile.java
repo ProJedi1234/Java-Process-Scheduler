@@ -21,11 +21,15 @@ public class CSVFile {
 
     public Float getAverageCompletionTime() {
         Float total = 0f;
+        int count = 0;
         for (CSVRow row : rows) {
-            total += row.Complete;
+            if (row.Complete != 0) {
+                total += row.Complete;
+                count++;
+            }
         }
 
-        return total/rows.size();
+        return count == 0 ? 0 : total/count;
     }
 
     @Override
