@@ -44,7 +44,7 @@ class ProcessScheduler {
         File file = new File(filePath); 
         Scanner sc = new Scanner(file); 
     
-        List<Process> processList = new LinkedList<Process>();
+        List<Process> processList = new LinkedList<>();
 
         while (sc.hasNextLine()) {
             Process process = new Process();
