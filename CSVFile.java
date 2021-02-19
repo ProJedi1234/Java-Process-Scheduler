@@ -46,4 +46,10 @@ public class CSVFile {
 
         return toReturn;
     }
+    public CSVRow first() {
+        return rows.get(0);
+    }
+    public CSVRow last() {
+        return rows.get(rows.size() - 1);
+    }
 }

@@ -31,10 +31,11 @@ class ProcessScheduler {
         getAverageLottery(processes, 1000);
 
         //Print summary
-        System.out.printf("FCFS:\t\t%.4f%n", fcfs.csvFile.getAverageCompletionTime());
-        System.out.printf("SJF:\t\t%.4f%n", sjf.csvFile.getAverageCompletionTime());
-        System.out.printf("RR 20:\t\t%.4f%n", rb.csvFile.getAverageCompletionTime());
-        System.out.printf("RR 50:\t\t%.4f%n", rb2.csvFile.getAverageCompletionTime());
+        System.out.printf("FCFS:\t\t%.4f\t%d\t%.4f%n", fcfs.csvFile.getAverageCompletionTime(), fcfs.csvFile.last().Complete, (float)(fcfs.csvFile.last().Complete)/processes.size());
+        System.out.printf("SJF:\t\t%.4f\t%d\t%.4f%n", sjf.csvFile.getAverageCompletionTime(), sjf.csvFile.last().Complete, (float)sjf.csvFile.last().Complete/processes.size());
+        System.out.printf("RR 20:\t\t%.4f\t%d\t%.4f%n", rb.csvFile.getAverageCompletionTime(), rb.csvFile.last().Complete, (float)rb.csvFile.last().Complete/processes.size());
+        System.out.printf("RR 50:\t\t%.4f\t%d\t%.4f%n", rb2.csvFile.getAverageCompletionTime(), rb2.csvFile.last().Complete, (float)rb2.csvFile.last().Complete/processes.size());
+        System.out.printf("Lottery (1):\t%.4f\t%d\t%.4f%n", lottery.csvFile.getAverageCompletionTime(), lottery.csvFile.last().Complete, (float)lottery.csvFile.last().Complete/processes.size());
         System.out.printf("Lottery Avg:\t%.4f%n", getAverageLottery(processes, 1000));
         getAverageLottery(processes, 1000);
     }
