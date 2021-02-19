@@ -20,7 +20,7 @@ class ProcessScheduler {
         rb.runScheduler();
         rb.saveCSVData();
 
-        RoundRobin rb2 = new RoundRobin(processes, 40);
+        RoundRobin rb2 = new RoundRobin(processes, 50);
         rb2.runScheduler();
         rb2.saveCSVData();
 
@@ -34,7 +34,7 @@ class ProcessScheduler {
         System.out.printf("FCFS:\t\t%.4f%n", fcfs.csvFile.getAverageCompletionTime());
         System.out.printf("SJF:\t\t%.4f%n", sjf.csvFile.getAverageCompletionTime());
         System.out.printf("RR 20:\t\t%.4f%n", rb.csvFile.getAverageCompletionTime());
-        System.out.printf("RR 40:\t\t%.4f%n", rb2.csvFile.getAverageCompletionTime());
+        System.out.printf("RR 50:\t\t%.4f%n", rb2.csvFile.getAverageCompletionTime());
         System.out.printf("Lottery Avg:\t%.4f%n", getAverageLottery(processes, 1000));
         getAverageLottery(processes, 1000);
     }
