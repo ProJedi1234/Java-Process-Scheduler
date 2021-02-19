@@ -8,5 +8,8 @@ This is a simple project for simulating an operating system task scheduler
 - Lottery with time quantum = 50
 
 ## Building Instructions
+- Navigate to source code folder in command line
+- `javac ProcessScheduler.java`
+- `java ProcessScheduler`
 
 This project was done entirely in Java, so building it requires Java to be installed on the machine
