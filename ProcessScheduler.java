@@ -42,6 +42,8 @@ class ProcessScheduler {
         System.out.printf("Lottery Avg:\t%.4f%n", getAverageLottery(processes, 1000));
         getAverageLottery(processes, 1000);
 
+        System.out.printf("%nLottery runs greater than 9,500 out of 10,000 runs%n");
+
         for (int i = 0; i < 10000; i++) {
             Lottery lotto = new Lottery(processes, 50);
             lotto.runScheduler();
