@@ -1,5 +1,5 @@
 # Java Scheduler
-This is a simple project for simulating an operating system task scheduler
+This is a simple project for simulating an operating system task scheduler. Make sure java is installed on your machine before attempting to compile
 ## Included schedulers
 - First-Come-First-Serve (FCFS)
 - Shortest-Job-First (SJF)
@@ -10,6 +10,14 @@ This is a simple project for simulating an operating system task scheduler
 ## Building Instructions
 - Navigate to source code folder in command line
 - `javac ProcessScheduler.java`
-- `java ProcessScheduler`
+- `java ProcessScheduler data_file.dat`
 
-This project was done entirely in Java, so building it requires Java to be installed on the machine
+## Formatting Datasets
+
+Each line of the text files needs to contain data about the processes
+
+The line structure is as follows:
+
+1. Process ID
+2. Burst time
+3. Priority
