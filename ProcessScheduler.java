@@ -42,15 +42,15 @@ class ProcessScheduler {
         System.out.printf("Lottery Avg:\t%.4f%n", getAverageLottery(processes, 1000));
         getAverageLottery(processes, 1000);
 
-        System.out.printf("%nLottery runs greater than 9,500 out of 10,000 runs%n");
+        // System.out.printf("%nLottery runs greater than 9,500 out of 10,000 runs%n");
 
-        for (int i = 0; i < 10000; i++) {
-            Lottery lotto = new Lottery(processes, 50);
-            lotto.runScheduler();
-            if (lotto.csvFile.getAverageCompletionTime() > 9500) {
-               System.out.println(lotto.csvFile.getAverageCompletionTime()); 
-            }
-        }
+        // for (int i = 0; i < 10000; i++) {
+        //     Lottery lotto = new Lottery(processes, 50);
+        //     lotto.runScheduler();
+        //     if (lotto.csvFile.getAverageCompletionTime() > 9500) {
+        //        System.out.println(lotto.csvFile.getAverageCompletionTime()); 
+        //     }
+        // }
     }
 
     private static List<Process> getProcessesFromFile(String filePath) throws Exception {
