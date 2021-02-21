@@ -16,7 +16,7 @@
             "request": "launch",
             "mainClass": "ProcessScheduler",
             "projectName": "Process Scheduler Java_4ac4f6e1",
-            "args": "data.txt"
+            "args": "testdata1.txt"
         }
     ]
 }
